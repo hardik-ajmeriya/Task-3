@@ -131,6 +131,280 @@
     }
 }
 
+/* Services Page Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Services Page Specific Styling */
+.services-container {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.services-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 3s ease-in-out infinite;
+}
+
+.services-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: #b8b8b8;
+    margin-bottom: 2rem;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+@keyframes goldShimmer {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual Service Card */
+.service-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.8));
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    border-color: #f4d03f;
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    display: block;
+    text-align: center;
+}
+
+.service-title {
+    color: #d4af37;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.service-description {
+    color: #b8b8b8;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-features li {
+    color: #e0e0e0;
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+}
+
+.service-price {
+    color: #f4d03f;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    display: block;
+    background: linear-gradient(45deg, #f4d03f, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Call to Action Section */
+.services-cta {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(0, 0, 0, 0.1));
+    border-radius: 20px;
+    margin-top: 3rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: #b8b8b8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #d4af37, #f4d03f);
+    border: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: linear-gradient(45deg, #f4d03f, #d4af37);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Sparkle effects for services page */
+.sparkle-service {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    color: #d4af37;
+    font-size: 1rem;
+    opacity: 0;
+    animation: sparkle-service 2s linear infinite;
+}
+
+@keyframes sparkle-service {
+    0% { opacity: 0; transform: scale(0) rotate(0deg); }
+    25% { opacity: 1; transform: scale(1) rotate(90deg); }
+    75% { opacity: 1; transform: scale(1.2) rotate(270deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); }
+}
+
+/* Responsive Design for Services */
+@media (max-width: 768px) {
+    .services-container {
+        padding-top: 100px;
+    }
+    
+    .services-title {
+        font-size: 2.8rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+    
+    .service-icon {
+        font-size: 3rem;
+    }
+    
+    .service-title {
+        font-size: 1.6rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-title {
+        font-size: 2.2rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
@@ -269,7 +543,7 @@
 }
 
 .bride-image {
-    width: 130%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     filter: sepia(10%) saturate(90%) brightness(100%) contrast(130%);
